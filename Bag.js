@@ -1,10 +1,17 @@
 class Bag {
-    constructor(weight) {
-        if(!weight){
-            throw new Error('bag needs weight')
-        } 
-        this.weight = weight
+  static maxWeight = 23;
+
+  constructor(weight) {
+    if (!weight) {
+      throw new Error('bag needs weight');
+    } else if (weight > Bag.maxWeight) {
+      throw new Error('Bag exceeds maximum weight');
     }
+    this.weight = weight;
+  }
 }
 
-module.exports = Bag
+let bagOne = new Bag(20);
+console.log(bagOne);
+
+module.exports = Bag;
